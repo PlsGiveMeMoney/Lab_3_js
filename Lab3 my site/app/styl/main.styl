@@ -1,0 +1,163 @@
+size = 100px
+mpsize = 5px
+wcol = white
+bcol = black
+gcol = gray
+lgcol = LightGray
+
+article(mpsize, col)
+  margin mpsize
+  display flex
+  flex-wrap wrap
+  border 2px solid col
+  padding mpsize
+  h2
+    text-align center
+    width 100%
+	
+article-with-img(mpsize, col)
+  margin mpsize
+  border 2px solid col
+  display inline-flex
+  padding mpsize
+  img
+    margin mpsize
+    width 24%
+	
+.menu
+  display flex
+  height size
+  width 90%
+  margin auto
+
+.menu
+  & .menu-headline
+    flex-basis 40%
+    background lgcol
+    & h3
+        font-weight bold
+        text-align center
+        margin mpsize*8 0 0 0
+  & .menu-refs
+    display inline-flex
+    align-self flex-end
+    flex-basis 60%
+    justify-content space-evenly
+    background lgcol
+
+.menu-refs
+  & .menu-ref
+    background gcol
+    margin mpsize*2
+    padding mpsize
+  & .are-here
+    text-decoration none
+    color wcol
+    background bcol
+  & .arent-here
+    text-decoration none
+    color wcol
+  & .menu-item
+    text-align center
+
+.article-imgs
+  max-height size*4
+  flex-direction row
+  justify-content center
+  display inline-flex
+.article-imgs
+  & .side-imgs
+    width 44.5%
+    margin 0.5%
+  & .article-img
+    width 100%
+    height 100%
+.side-imgs
+  & .split-side-imgs
+    align-content stretch
+    justify-content space-evenly
+    flex-direction column
+    height 49.5%
+  & .article-img
+    width 100%
+    height 100%
+
+
+
+.logo-article-menu
+  display flex
+  width 70%
+  margin auto
+  justify-content space-evenly
+
+.logo-article
+  width 31%
+  margin 1%
+  text-align center
+
+.logo-img
+  border-radius size
+  width size
+  height size
+
+.articles
+  display flex
+  flex-direction column
+  width 80%
+  margin auto
+
+.article
+  article(mpsize, gcol)
+
+
+.article-with-img
+  article-with-img(mpsize, gcol)
+
+.article-text
+  width 74%
+
+span
+  float right
+
+.bg
+  background lgcol
+
+@media(max-width:900px)
+
+  .menu-headline
+    width 100%
+    flex-basis 100%
+    background wcol
+	
+  .menu
+    flex-wrap wrap
+    height auto
+	
+  .article-imgs
+    flex-wrap wrap
+    margin auto
+    max-height size*7
+  
+  .side-imgs
+    width 90%
+    max-height size*3
+    display flex
+    flex-wrap wrap
+  
+  .split-side-imgs
+    max-height size*3
+    flex-direction row
+    width 100%
+  
+  .logo-article-menu
+    flex-direction column
+    align-items center
+  
+  .menu-refs
+    flex-wrap wrap
+    flex-basis 100%
+    background wcol
+  
+  .menu-ref
+    margin mpsize
+    width 45%

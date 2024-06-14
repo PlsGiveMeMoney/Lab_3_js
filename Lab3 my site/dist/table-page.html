@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Информация о гречке</title>
+  </head>
+  <body>
+    <p><a href="Main-page.html"> Главная страница </a><br><a href="table-page.html"> Таблица с информацией о продуктах </a></p>
+    <hr>
+    <p></p>
+    <details>
+      <summary> График </summary>
+      <form>
+        <table>
+          <tbody>
+            <tr>
+              <td>График по оси OX</td>
+              <td>Результат</td>
+            </tr>
+            <tr></tr>
+            <tr>
+              <td>
+                <label>Тип:
+                  <select>
+                    <option value="0">Молочные продукты</option>
+                    <option value="1">Хлебобулочные изделия</option>
+                    <option value="2">Крупы</option>
+                    <option value="3">Овощи</option>
+                    <option value="4">Фрукты</option>
+                    <option value="5">Мясо</option>
+                  </select>
+                </label>
+              </td>
+              <td>
+                <input type="checkbox" name="kkal">Ккал
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="checkbox" name="protine">Белки
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="checkbox" name="fats">Жиры
+              </td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>
+                <input type="checkbox" name="carbs">Углеводы
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <input type="button" value="Построить">
+      </form>
+    </details>
+    <details>
+      <summary> Фильтр </summary>
+      <form id="filter">
+        <p>
+          <label>Название:
+            <input type="text" id="structure">
+          </label><br>
+          <label>Тип:
+            <input type="text" id="category">
+          </label><br>
+          <label>Ккал:
+            <input type="number" id="kkalFrom"> до:
+            <input type="number" id="kkalTo">
+          </label><br>
+          <label>Белки:
+            <input type="number" id="proteinFrom"> до:
+            <input type="number" id="proteinTo">
+          </label><br>
+          <label>Жиры:
+            <input type="number" id="fatFrom"> до:
+            <input type="number" id="fatTo">
+          </label><br>
+          <label>Углеводы:
+            <input type="number" id="carbsFrom"> до:
+            <input type="number" id="carbsTo">
+          </label><br>
+           <input type="button" id="search-button" value="Найти">
+		<input type="button"  id="clear-button" value="Очистить фильтры">
+        </p>
+      </form>
+    </details>
+    <details>
+      <summary> Сортировка </summary>
+      <form id="sort">
+        <p>
+          <label>Сортировка первого уровня
+             <p>
+			<select id="fieldsFirst">
+			</select>
+			по убыванию? <input type="checkbox" id="fieldsFirstDesc">
+			</p>
+          </label><br>
+          <label>Сортировка второго уровня
+             <p>
+			<select id="fieldsSecond">
+			</select>
+			по убыванию? <input type="checkbox" id="fieldsSecondDesc">
+			</p>
+          </label><br>
+          <label>Сортировка третьего уровня
+             <p>
+			<select id="fieldsThird">
+			</select>
+			по убыванию? <input type="checkbox" id="fieldsThirdDesc">
+			</p>
+          </label><br><br>
+           <input type="button" id="sort-button" value="Сортировать">
+			<input type="button" id="sort-button-clear" value="Сбросить сортировку">
+        </p>
+      </form>
+    </details>
+    <p></p>
+    <p>Информация в таблице расчитана на 100г. продукта</p>
+    <p></p>
+    <table align="center" border="1" cellspacing="0" id="list">
+
+    </table>
+    <p></p>
+  </body>
+  <script src="js/main.js"></script>
+   <script src="js/data.js"></script>
+</html>

@@ -1,0 +1,56 @@
+- var logoItems = [  {src: 'img/logo1.png', text: 'какая то компания'},  {src: 'img/logo2.png', text: 'какая то компания'},  {src: 'img/logo3.png', text: 'какая то компания'}]
+- var menuItems = [  {text: 'Главная страница', href: 'Main-page.html', class: 'are-here'},  {text: 'Информация о крупах', href: 'grechka-page.html', class: 'arent-here'},  {text: 'Информация о мясе', href: 'grechka-page.html', class: 'arent-here'},  {text: 'Таблица с информацией о продуктах', href: 'table-page.html', class: 'arent-here'}]
+
+mixin createLogoArticle(item)
+  .logo-article
+    img.logo-img(src=item.src)
+    div=item.text
+
+mixin createMenuItem(item)
+  .menu-item.menu-ref(class=item.class)
+    a(class=item.class, href=item.href) #{item.text}
+
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title Главная страница
+    link(rel="stylesheet", href="css/main.css")
+  body
+    .menu
+      .menu-headline
+        h3 Лучший сайт с информацией о продуктах
+      .menu-refs
+          each item in menuItems
+            +createMenuItem(item)
+			
+    .article-imgs
+      .side-imgs
+        img.article-img(src='img/produkty.png')
+      .side-imgs
+        .split-side-imgs
+          img.article-img(src='img/gluten2.png')
+          img.article-img(src='img/eda-v-budushchem.png')
+
+    .logo-article-menu
+        each item in logoItems
+          +createLogoArticle(item)
+		  
+    .articles
+      .article-with-img
+        .article-text
+          h2 Продукты, которые должны быть в рационе — ТОП 10
+          div Полноценное питание – залог хорошего метаболизма, профилактика заболеваний и обеспечение организма питательными веществами. Рассмотрим продукты для ежедневного употребления, включая в [
+            a(href='#') … ]
+
+        img(src='img/finik.png')
+      .article
+        h2 Глютен — польза и вред
+        div О глютене сейчас не говорит только ленивый. «Безглютеновые продукты» относят в категорию элитных и дорогих, а диетическое питание без глютена [
+          a(href='#') … ]
+
+    .bg © Мулява Г.А.,Б9121-09.03.04(6), 2023-2024
+
+      span ✉ mulyava.ga@dvfu.ru
+  
+    
